@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Профориентационный чат-бот «Выбор профессии»</title>
+
+    <!-- Font Awesome без integrity -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- пустой favicon, чтобы не было 404 -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+  
+    <!-- Three.js r149 (без предупреждения) -->
+<script src="https://unpkg.com/three@0.149.0/build/three.min.js"></script>
+
+</head>
+<body>
+<!-- 3D фон -->
+<canvas id="bg"></canvas>
+
+<div class="app">
+    <header class="app-header">
+        <div class="header-left">
+            <div class="logo-badge">
+                <i class="fa-solid fa-user-graduate"></i>
+            </div>
+            <div>
+                <h1 id="headerTitle">Профориентационный чат-бот</h1>
+                <p id="headerSubtitle">«Выбор профессии»</p>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="lang-toggle">
+                <button class="lang-btn active" id="langRu">RU</button>
+                <button class="lang-btn" id="langKz">KZ</button>
+            </div>
+            <span class="status-dot"></span>
+            <span class="status-text" id="statusText">Онлайн</span>
+        </div>
+    </header>
+
+    <main class="chat" id="chat"></main>
+
+    <footer class="app-footer">
+        <small id="footerText">
+            Рекомендации основаны на ваших ответах и не являются окончательным выбором профессии.
+        </small>
+    </footer>
+
+    <!-- Стартовый экран с приветствием -->
+    <div class="intro-screen" id="intro">
+        <div class="intro-card">
+            <div class="intro-icon">
+                <i class="fa-solid fa-compass"></i>
+            </div>
+            <h2 id="introTitle">Привет!</h2>
+            <p id="introText">
+                Напиши короткое приветствие или своё имя — и я помогу подобрать подходящую сферу и профессии.
+            </p>
+            <div class="intro-input-row">
+                <input type="text" id="introName"
+                       placeholder="Например: Привет, я Аружан">
+                <button id="startBtn">
+                    <i class="fa-solid fa-play"></i>
+                    <span id="startBtnText">Начать тест</span>
+                </button>
+            </div>
+            <p class="intro-hint" id="introHint">
+                Можно просто нажать «Начать тест», если не хочешь писать текст.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
